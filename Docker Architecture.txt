@@ -1,3 +1,8 @@
+Link:
+-----------
+https://www.youtube.com/live/8UCm3lAdFWg?si=1MRNcPGHFBJGh8t5
+
+
 Docker Architecture
 -----------------------
 1. Dockerfile : It contains set of instructions to build docker image
