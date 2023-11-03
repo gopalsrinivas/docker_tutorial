@@ -1,0 +1,15 @@
+Docker Architecture
+-----------------------
+1. Dockerfile : It contains set of instructions to build docker image
+2. Docker Image : It is a package which contains code + dependencies
+3. Docker Registry : It is a place where we can store our docker images
+4. Docker Container : When we run docker image then docker container will be created.
+                        our application will execute inside docker container.                        
+
+
+
+
+
+
+
+App Code -> Dockerfile --build--> Docker Image --Push--> Docker Hub(Registry)
