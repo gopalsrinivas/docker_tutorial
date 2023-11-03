@@ -1,0 +1,217 @@
+Docker Tutorial:
+----------------
+Images: Image is a templates of project
+container: Running Instance of Image.
+
+Docker Images:
+---------------
+> It is a kind of ready-to-use software read-only template
+> Images is made with source codes, libraries, external depependencies and tools
+> Images can not be updated.
+> if you want to make change in image you have to create new image.
+> Image can not run directly.
+
+Docker Container:
+-----------------
+> The container is a process that runs applications with Images
+> Container is an isolated Process
+> Menas Container run independently on computer
+
+
+Base Image:
+-----------
+> The Image is a template of project
+   Library, code, tools, etc
+> Sometimes Project needs another Image of Programming language or other library.
+> E.g in Node is project needs a base image of node js
+
+Docker File --BUILD--> Docker Image --RUN--> Docker Container
+
+PUll Image and Run Container:
+-----------------------------
+Images can be download with terminal or Docker Desktop
+
+> Download Node Image from the docker hub
+> Make a container for node js
+> Run Node js Container
+> Write Node js inside container.
+
+Download/pull PHP image
+
+Docker pull cmd:
+-----------------
+> docker pull php
+> docker pull node
+> docker pull django
+
+Docker Run cmd:
+-----------------
+> docker run -it php /bin/bash
+
+Make Basic App for Docker
+--------------------------
+Create some php or Django Project
+
+Make Docker File & Make Image:
+-------------------------------
+> Create a file for docker.
+> Add Docker Extension
+> Write code in docker file for image
+> Run docker file and make build
+> check Image in docker desktop
+
+List Docker Images
+--------------------
+> docker images
+
+Run Project with container
+--------------------------
+Create django docker file
+
+Container with Project Image:
+-----------------------------
+> How to run container with own project image
+> Assign Port to container
+> Random Port & No port on Container
+> Test Running app in container
+
+Dockerize a Django application: 
+-------------------------------
+pip freeze > requirements.txt
+> Create Docker file
+    Dockerfile
+
+Dockerfile:
+----------
+FROM python:3.8-buster
+ENV PYTHONBUFFERED=1
+WORKDIR / django
+COPY requirements.txt requirements.txt
+RUN Pip install -r requirements.txt
+COPY ..
+CMD python manage.py runserver 0.0.0.0:8000
+
+docker-compose.yml
+------------------
+version:"3.8"
+services:
+   app:
+    build: .
+    volumes:
+     - .:/django
+    ports:
+     - 8000:8000
+    image: app:django
+    container_name: my_first_django_container
+    command: python manage.py runserver 0.0.0.0:8000
+    
+
+CMD:
+-------
+docker-compose build -> Image created 
+docker-compose up    -> containter created
+
+
+Docker Ignore File:
+-------------------
+> Use of .dockerignore file
+> create .dockerignore file
+> add files and folder in .dockerignore file
+
+Delete Images and Container with terminal:
+-------------------------------------------
+> Delete Images with the docker desktop
+> Delete Container with docker desktop
+> Delete operation with terimand and cmd
+> Delete image and container forcefully
+
+Cmd's
+-----
+     > docker build -t basic-app20 .
+     > docker image rm basic-app(image name)
+     > docker image rm basic-app -f
+     > basic-app/ docker ps -a
+     > docker container rm tony
+     
+Manage versions of images:
+---------------------------
+> What is Image Version
+> How to make an Image Version
+> Delete all images and container
+> Run the Docker container from terminal with version.
+
+Cmd's:
+-------
+       > docker system prune -a (Delete containers and images)
+       > docker build t basic-app .(restored images)
+       > docker build -t basic-app:v2 . (tag is add)
+       > docker run --name basic-app-container-v2 -p 5500:5500 basic-app:v2
+
+Volumes in Docker:
+------------------
+> what is Volumes in docker?
+> Containues changes in container with volume.
+> Add nodemon and update docker file
+> Create Volume and update container
+
+cmd:
+-----
+> docker build -t basic-app .(restore images)
+> docker run --name basic-conatiner -p 5500:5500 --rm -v basic-app
+> 
+
+Compose file:
+--------------
+> What is the use of a compose file ?
+> How to make a compose file ?
+> Write commands in file ?
+> Run compose file ?
+
+compose.yaml:
+------------
+services:
+ img:
+   build: . 
+   container_name: basic-container
+   ports:
+       -5500:5500
+
+Cmds:
+-------
+ docker compose up
+
+Share Image on Docker Hub:
+-------------------------
+> What is docker hub
+> Make account and login
+> Make image and push on docker hub
+> How to pull image from docker hub.
+
+
+
+How to deploy Django Application on AWS EC2 | | GitHub | Docker | AWS| Jenkins
+https://youtu.be/sqrK5wKSLp4?si=GuBaJAD-3_jODGHh 
+https://github.com/itsnehagarg/AWSProjects/blob/main/EC2/HowtoDeployDjangoApponEC2.md
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
