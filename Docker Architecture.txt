@@ -1,27 +1,109 @@
-Link:
------------
-Ashok IT
-
-https://www.youtube.com/live/8UCm3lAdFWg?si=1MRNcPGHFBJGh8t5
-
-Code Step By Step:
-------------------
-https://youtu.be/iFiSYMdZWDk?si=mxKJYsqZDEPMBmof
-
-
-
 Docker Architecture
 -----------------------
 1. Dockerfile : It contains set of instructions to build docker image
 2. Docker Image : It is a package which contains code + dependencies
 3. Docker Registry : It is a place where we can store our docker images
 4. Docker Container : When we run docker image then docker container will be created.
-                        our application will execute inside docker container.                        
-
-
-
-
-
-
+                        our application will execute inside docker container.   
 
 App Code -> Dockerfile --build--> Docker Image --Push--> Docker Hub(Registry)
+
+Note: Every Docker container is one virtual machine.
+
+=======================
+Docker Setup
+=======================                     
+
+https://github.com/ashokitschool/DevOps-Documents/blob/main/Docker-Setup.md
+
+==================
+docker commands
+===================
+docker images: To display list of docker images available in our system
+docker ps: To display list of docker containers runing in our system
+docker ps -a:
+docker pull <image-id/image-name>: To download docker image
+docker run <image-id/image-name>: To run docker image (container creation)
+docker rmi <image-id/image-name>:To delete docker image
+docker rm <container-id>:TO delete docker container
+docker system prune -a: delete stopped container and unused images
+
+docker run -p 9090:9090 <image-id/image-name>
+
+1) How to write docker file
+2) How to build docker image
+3) Hot push docker image into docker hub
+4) Hoe to get into docker container
+5) docker componse (djnago + mysql)
+6) docker with jenkins integration
+
+docker command list:
+------------------------
+
+Docker is a popular platform for developing, shipping, and running applications in containers. Here's a list of some commonly used Docker commands:
+
+Image Commands:
+
+docker images or docker image ls: List available images.
+docker pull <image-name>: Pull an image from a registry.
+docker build -t <image-name> <path-to-dockerfile>: Build an image from a Dockerfile.
+
+Container Commands:
+
+docker ps: List running containers.
+docker ps -a: List all containers (running and stopped).
+docker run <image-name>: Create and start a new container from an image.
+docker stop <container-id>: Stop a running container.
+docker start <container-id>: Start a stopped container.
+docker restart <container-id>: Restart a container.
+docker exec -it <container-id> <command>: Execute a command in a running container.
+Container Management:
+
+docker rm <container-id>: Remove a stopped container.
+docker rmi <image-name>: Remove an image.
+docker logs <container-id>: View container logs.
+docker inspect <container-id>: Get detailed information about a container.
+docker stats <container-id>: Display live performance stats for a container.
+Network Commands:
+
+docker network ls: List Docker networks.
+docker network create <network-name>: Create a new network.
+docker network connect <network-name> <container-id>: Connect a container to a network.
+Docker Compose:
+
+docker-compose up: Start services defined in a docker-compose.yml file.
+docker-compose down: Stop and remove services defined in a docker-compose.yml file.
+Docker Volume:
+
+docker volume ls: List Docker volumes.
+docker volume create <volume-name>: Create a new volume.
+docker volume rm <volume-name>: Remove a volume.
+Registry and Authentication:
+
+docker login: Log in to a Docker registry.
+docker push <image-name>: Push an image to a registry.
+docker pull <image-name>: Pull an image from a registry.
+docker logout: Log out from a Docker registry.
+System Commands:
+
+docker info: Display system-wide information.
+docker version: Show Docker version information.
+docker system prune: Remove all stopped containers, dangling images, and unused networks and volumes.
+Swarm Commands:
+
+If you're using Docker Swarm for orchestration, there are additional commands for managing services, nodes, and the swarm cluster.
+Please note that this is not an exhaustive list of Docker commands,
+and Docker offers a wide range of features and options for container management.
+You can access the official Docker documentation or use docker --help or docker <command> --help
+ for more information and options related to each command.
+
+
+
+
+
+
+
+
+
+
+
